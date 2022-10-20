@@ -1,6 +1,7 @@
 # ISCAS22-Real-Time Fast Channel Clustering For Lidar Point Cloud
 
-Previous work: ICCVW21-TradiCV-Survey-of-LiDAR-Cluster
+Previous work: ICCVW21-TradiCV-Survey-of-LiDAR-Cluster 
+https://github.com/placeforyiming/ICCVW21-LiDAR-Panoptic-Segmentation-TradiCV-Survey-of-Point-Cloud-Cluster 
 
 ## Motivation
 Sensors can produce point clouds with
