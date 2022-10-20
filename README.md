@@ -1,11 +1,11 @@
-# ICCVW21-TradiCV-Survey-of-LiDAR-Cluster
+# ISCAS22-Real-Time Fast Channel Clustering For Lidar Point Cloud
+
+Previous work: ICCVW21-TradiCV-Survey-of-LiDAR-Cluster
 
 ## Motivation
-In contrast to popular end-to-end deep learning LiDAR panoptic segmentation solutions, we propose a hybrid method with an existing semantic segmentation network to extract semantic information and a traditional LiDAR point cloud cluster algorithm to split each instance object. We argue geometry-based traditional clustering algorithms are worth being considered by showing a state-of-the-art performance among all published end-to-end deep learning solutions on the panoptic segmentation leaderboard of the SemanticKITTI dataset. To our best knowledge, we are the first to attempt the point cloud panoptic segmentation with clustering algorithms. Therefore, instead of working on new models, we give a comprehensive technical survey in this paper by implementing four typical cluster methods and report their performances on the benchmark. Those four cluster methods are the most representative ones with real-time running speed. They are implemented with C++ in this paper and then wrapped as a python function for seamless integration with the existing deep learning frameworks.
+Sensors can produce point clouds with
+precise 3D depth information that is essential for autonomous vehicles and robotic systems. As a perception task, point cloud clustering algorithms can be applied to segment the points into object instances. In this brief, we propose a novel, hardwarefriendly fast channel clustering (FCC) algorithm that achieves state-of-the-art performance when evaluated using KITTI panoptic segmentation benchmark. Furthermore, an efficient, pipeline hardware architecture is proposed to implement the FCC algorithm on an FPGA. Experiments show that the hardware design can process each LiDAR frame with 64 channels, 2048 horizontal resolution at various point sparsity in 1.93 ms, which is more than 471.5 times faster than running on the CPU. The code will be released to the public via GitHub
 
-<br />
-<img src="https://github.com/placeforyiming/ICCVW21-LiDAR-Panoptic-Segmentation-TradiCV-Survey-of-Point-Cloud-Cluster/blob/master/examples.png?raw=true" alt="Figure" style="width: 840px; height: 500px;" hspace="10" align="left"/>
-<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 ## Dataset Organization
 
@@ -79,6 +79,16 @@ The reported numbers should be exactly the same as the paper since traditional m
 Please cite the paper if you use this code:
 
 ```
+@ARTICLE{9803249,
+  author={Zhang, Xiao and Huang, Xinming},
+  journal={IEEE Transactions on Circuits and Systems II: Express Briefs}, 
+  title={Real-Time Fast Channel Clustering for LiDAR Point Cloud}, 
+  year={2022},
+  volume={69},
+  number={10},
+  pages={4103-4107},
+  doi={10.1109/TCSII.2022.3185228}}
+  
 @inproceedings{zhao2021technical,
   title={A Technical Survey and Evaluation of Traditional Point Cloud Clustering Methods for LiDAR Panoptic Segmentation},
   author={Zhao, Yiming and Zhang, Xiao and Huang, Xinming},
