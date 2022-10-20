@@ -6,6 +6,9 @@ Previous work: ICCVW21-TradiCV-Survey-of-LiDAR-Cluster
 Sensors can produce point clouds with
 precise 3D depth information that is essential for autonomous vehicles and robotic systems. As a perception task, point cloud clustering algorithms can be applied to segment the points into object instances. In this brief, we propose a novel, hardwarefriendly fast channel clustering (FCC) algorithm that achieves state-of-the-art performance when evaluated using KITTI panoptic segmentation benchmark. Furthermore, an efficient, pipeline hardware architecture is proposed to implement the FCC algorithm on an FPGA. Experiments show that the hardware design can process each LiDAR frame with 64 channels, 2048 horizontal resolution at various point sparsity in 1.93 ms, which is more than 471.5 times faster than running on the CPU. The code will be released to the public via GitHub
 
+## Fast Channel Clustering (FCC)
+The /PC_cluster/my_cluster includes the FCC cluster which we published in ISICAS2022
+
 
 ## Dataset Organization
 
@@ -22,24 +25,18 @@ precise 3D depth information that is essential for autonomous vehicles and robot
 ## How to run
 
 ```` 
-```
 docker pull pytorch/pytorch:1.7.1-cuda11.0-cudnn8-runtime 
-```
 ````
 Install dependency packages:
 ```` 
-```
 bash install_dependency.sh
-```
 ````
 Compile specific clusters 
 ```` 
-```
 cd PC_cluster
 cd ScanLineRun_cluster/Euclidean_cluster/depth_cluster/SuperVoxel_cluster
 bash prepare_packages.sh/prepare_pybind.sh
 bash build.sh
-```
 ````
 Note, prepare_packages.sh may redundantly install packages as clusters are supposed to be used independently. 
 
@@ -54,9 +51,7 @@ It looks like ./method_predictions/sequences/08/predictions/*.label
 
 Run the cluster algorithm
 ```` 
-```
 python semantic_then_instance_post_inferece.py
-```
 ````
 It should keep updating the visualization figure output_example.png, and overwrite predicted labels in ./method_predictions/sequences/08/predictions/
 
@@ -78,8 +73,7 @@ instance_then_evaluation.sh
 ````
 The script to the run the post-instancing and then make the evaluation automaticlly. (You need to remove and reload the semantic result every time when start a new evaluation)
 
-## Fast Channel Clustering (FCC)
-The /PC_cluster/my_cluster includes the FCC cluster which we published in ISICAS2022
+
 
 
 
