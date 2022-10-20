@@ -67,13 +67,21 @@ Some parameters can be tuned in args parser.
 
 After generating the predicted panoptic label on validation set, one can simply run:
 ````
-```
 bash evaluation_panoptic.sh
-```
 ````
 Some changes of local path may need to be done. Just follow the error to change them, should be easy. 
 
 The reported numbers should be exactly the same as the paper since traditional methods have no randomness. 
+
+````
+instance_then_evaluation.sh
+````
+The script to the run the post-instancing and then make the evaluation automaticlly. (You need to remove and reload the semantic result every time when start a new evaluation)
+
+## Fast Channel Clustering (FCC)
+The /PC_cluster/my_cluster includes the FCC cluster which we published in ISICAS2022
+
+
 
 ## Publication ##
 Please cite the paper if you use this code:
